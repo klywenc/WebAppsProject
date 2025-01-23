@@ -1,0 +1,212 @@
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Jasny motyw */
+.light-mode body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.light-mode .title {
+    color: #333;
+}
+
+.light-mode .menu-info h2 {
+    color: #333;
+}
+
+.light-mode .menu-info p {
+    color: #555;
+}
+
+
+.light-mode .price {
+    color: #e67e22;
+}
+
+.light-mode .order-button {
+    background-color: #e74c3c;
+}
+
+.light-mode .order-button:hover {
+    background-color: #c0392b;
+}
+
+
+/* Ciemny motyw */
+.dark-mode body {
+    background-color: #222;
+    color: #eee;
+}
+
+.dark-mode .title {
+    color: #eee;
+}
+
+.dark-mode .menu-info h2 {
+    color: #eee;
+}
+
+.dark-mode .menu-info p {
+    color: #aaa;
+}
+
+.dark-mode .price {
+    color: #f0a020; /* Zmieniony kolor ceny na pomarańczowy */
+}
+
+.dark-mode .order-button {
+    background-color: #a00; /* Ciemnoczerwony przycisk */
+}
+
+.dark-mode .order-button:hover {
+    background-color: #800; /* Ciemnoczerwony przycisk hover */
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.menu-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.menu-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-info {
+    padding: 15px;
+}
+
+.menu-info h2 {
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+.menu-info p {
+    line-height: 1.5;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.order-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.order-button:hover {
+    background-color: #c0392b;
+}
+
+.theme-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/*Dark mode*/
+#dark-mode-toggle:checked ~ .slider {
+    background-color: #666;
+}
+
+#dark-mode-toggle:checked ~ .slider:before {
+    background-color: #fff;
+}
+
+/*Media Queries*/
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
